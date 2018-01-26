@@ -25,7 +25,6 @@ export class MemoryGame extends React.Component {
             clicks: 0,
             guess: -1,
             guessTwo: -1,
-            gameOver: false,
             progress: 0
         }
         // handleGuess must be bound in constructor
@@ -44,7 +43,6 @@ export class MemoryGame extends React.Component {
             clicks: 0,
             guess: -1,
             guessTwo: -1,
-            gameOver: false,
             progress: 0
         });
     }
