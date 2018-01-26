@@ -20,11 +20,11 @@ import "phoenix_html";
 
 // import socket from "./socket"
 
-import run_demo from "./demo";
+import run_gamePage from "./game";
 
 function init() {
   let root = document.getElementById('game');
-  run_demo(root);
+  run_gamePage(root);
 }
 
 // Use jQuery to delay until page loaded.

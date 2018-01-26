@@ -2,5 +2,13 @@
 
 @import "bootstrap";
 
-.side { padding: 4ex; text-align: center; }
-h1 { text-align: center; }
+h1 { text-align: center;
+    margin: auto;
+    width: 50%; }
+.container { display: flex;
+    flex-direction: column; }
+.row { text-align: center; }
+#game { text-align: center;
+        margin: auto;
+        width: 50%; }
+#congrats { font-size: 1.5em; }
