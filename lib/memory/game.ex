@@ -100,11 +100,11 @@ defmodule Memory.Game do
     last = Enum.count(chars) - 1
     newChars = cond do
       index == 0 ->
-        Enum.slice(chars, 1..16)
+        Enum.slice(chars, 1..last)
       index == last ->
-        Enum.slice(chars, 0..last)
+        Enum.slice(chars, 0..last-1)
       true ->
-        Enum.concat([Enum.slice(chars, 0..index-1), Enum.slice(chars, index+1..16)])
+        Enum.concat([Enum.slice(chars, 0..index-1), Enum.slice(chars, index+1..last)])
     end
     newBlocks = Enum.concat(blocks, [%{ index: x, letter: randomLetter, completed: false }])
     generateBlocks(x+1, newBlocks, newChars)
