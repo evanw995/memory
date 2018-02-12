@@ -4,22 +4,22 @@ import { Button } from 'reactstrap';
 import { MemoryGame } from './MemoryGame.jsx';
 import { Block } from './Block.jsx';
 
-export default function run_gamePage(root) {
-  ReactDOM.render(<GamePage side={0}/>, root);
+export default function run_gamePage(root, channel) {
+  ReactDOM.render(<GamePage channel={channel}/>, root);
 }
 
 class GamePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      game: props.game
+      channel: props.channel,
     };
   }
 
   render() {
     return (
       <div id="memGame">
-        <MemoryGame />
+        <MemoryGame channel={this.props.channel}/>
       </div>
     );
   }
