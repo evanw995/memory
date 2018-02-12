@@ -9,7 +9,7 @@ export class Block extends React.Component {
     }
 
     handleClick(e) {
-        if (!this.props.completed) {
+        if ((!this.props.completed) && (this.props.guessTwo == -1)) {
             this.props.onGuess(this.props.blockNum);
         }
     }

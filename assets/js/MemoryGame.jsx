@@ -42,7 +42,7 @@ export class MemoryGame extends React.Component {
     }
 
     handleGuess(num) {
-        this.channel.push("guess", { num: num })
+        this.channel.push("guess", { num: num }) // await?
             .receive("ok", this.gotView.bind(this));
     }
 
