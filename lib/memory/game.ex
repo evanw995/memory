@@ -97,9 +97,12 @@ defmodule Memory.Game do
   def generateBlocks(x, blocks, chars) do
     randomLetter = Enum.random(chars)
     index = Enum.find_index(chars, fn(y) -> y == randomLetter end)
+    last = Enum.count(chars) - 1
     newChars = cond do
       index == 0 ->
         Enum.slice(chars, 1..16)
+      index == last ->
+        Enum.slice(chars, 0..last)
       true ->
         Enum.concat([Enum.slice(chars, 0..index-1), Enum.slice(chars, index+1..16)])
     end
