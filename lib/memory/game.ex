@@ -1,7 +1,7 @@
 defmodule Memory.Game do
-  def newGame do
+  def newGame() do
     %{
-      blocks: generateBlocks(0),
+      blocks: generateBlocks(),
       gameOver: false,
       clicks: 0,
       guess: -1,
@@ -82,8 +82,8 @@ defmodule Memory.Game do
   end
 
   # Start case for generating randomized list of blocks
-  def generateBlocks(0) do
-    chars = Enum.slice(String.split("AABBCCDDEEFFGGHH", ""), 0..15)
+  def generateBlocks() do
+    chars = String.split("AABBCCDDEEFFGGHH", "", trim: true)
     blocks = []
     generateBlocks(0, blocks, chars)
   end
